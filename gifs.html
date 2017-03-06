@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--
+@file
+Точка входа в приложение
+-->
+<html lang="ru" class="ua_js_no">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Задание 3: Мобилизация.Гифки</title>
+
+        <!-- Проверка поддержки браузерных фич для bem-components -->
+        <script>(function(e,c){e[c]=e[c].replace(/(ua_js_)no/g,"$1yes");})(document.documentElement,"className");(function(d,n){d.documentElement.className+=" ua_svg_"+(d[n]&&d[n]("http://www.w3.org/2000/svg","svg").createSVGRect?"yes":"no");})(document,"createElementNS");</script>
+
+        <!-- Стили bem-components -->
+        <link rel="stylesheet" href="vendor/bem-components-dist-5.0.0/touch-phone/bem-components.dev.css">
+
+        <!-- Стили проекта -->
+        <link rel="stylesheet" href="assets/style.css">
+    </head>
+    <body class="page page_theme_islands i-bem" data-bem='{"page":{}}'>
+        <!-- Шапка страницы -->
+        <div class="header">
+            <div class="header__item header__logo">Мобилизация.Гифки</div>
+
+            <form class="header__item header__search search i-bem" data-bem='{"search":{}}'>
+                <div class="search__col search__col_type_input">
+                    <span class="search__input input input_theme_islands input_size_xl input_width_available input_type_search input_has-clear i-bem" data-bem='{"input":{}}'><span class="input__box"><input class="input__control" name="text" placeholder="Спроси Giphy" type="search"><span class="input__clear"></span></span></span>
+                </div>
+                <div class="search__col search__col_type_button">
+                    <button class="search__submit button button_theme_islands button_size_xl button_view_action  button__control i-bem" data-bem='{"button":{}}' role="button" type="submit"><span class="button__text">Поиск</span></button>
+                </div>
+            </form>
+
+            <div class="header__item">
+                <a class="page__open-favorites link link_theme_islands link_size_xl link_pseudo link__control i-bem" data-bem='{"link":{}}' role="link">Избранное</a>
+            </div>
+        </div>
+
+        <!--
+        Результаты поиска, вставляются как результат клиентской шаблонизации из клиентского JS
+        См. blocks.js
+        -->
+        <div class="page__results results results_empty i-bem" data-bem='{"results":{}}'>
+            Здесь ничего нет
+        </div>
+
+        <!-- Спиннер. Показывается при обращении к бэкенду -->
+        <div class="page__spinner">
+            <span class="spin spin_theme_islands spin_size_xl"></span>
+        </div>
+
+        <!-- Подвал страницы -->
+        <div class="footer">
+            <p class="footer__text">Материалы:</p>
+            <ul class="list">
+                <li class="list__item">
+                    <a class="link link_theme_islands link_size_m link__control i-bem" data-bem='{"link":{}}' role="link" href="https://developer.mozilla.org/ru/docs/Web/API/Service_Worker_API/Using_Service_Workers">Service Workers</a>
+                </li>
+                <li class="list__item">
+                    <a class="link link_theme_islands link_size_m link__control i-bem" data-bem='{"link":{}}' role="link" href="https://github.com/Giphy/GiphyAPI">Giphy API</a>
+                </li>
+                <li class="list__item">
+                    <a class="link link_theme_islands link_size_m link__control i-bem" data-bem='{"link":{}}' role="link" href="https://ru.bem.info/platform/libs/bem-components/5.0.0/">bem-components</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Секция динамически показываемых блоков -->
+
+        <!-- Окно сообщения об ошибке -->
+        <div class="page__alert modal modal_autoclosable modal_theme_islands popup popup_autoclosable i-bem"
+             data-bem='{"modal":{},"popup":{"zIndexGroupLevel":20}}' role="dialog" aria-hidden="true">
+            <div class="modal__table">
+                <div class="modal__cell">
+                    <div class="modal__content modal__content_type_alert"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Окно избранного -->
+        <div class="page__favorites favorites-container modal modal_autoclosable modal_theme_islands popup popup_autoclosable i-bem"
+             data-bem='{"modal":{},"popup":{"zIndexGroupLevel":30},"favorites-container":{}}' aria-hidden="true">
+            <div class="modal__table">
+                <div class="modal__cell">
+                    <div class="favorites-container__content modal__content">
+                        <div class="favorites-container__header">Избранное</div>
+                        <div class="favorites-container__items">Здесь ничего нет</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Собранный JS bem-components -->
+        <script src="vendor/bem-components-dist-5.0.0/touch-phone/bem-components.dev.js"></script>
+
+        <!-- Библиотека KvKeeper.js -->
+        <script src="vendor/kv-keeper.js-1.0.4/kv-keeper.js"></script>
+
+        <!-- BEMHTML-шаблоны, определённые на проекте -->
+        <script src="assets/templates.js"></script>
+
+        <!-- Клиентский JS блоков проекта -->
+        <script src="assets/blocks.js"></script>
+    </body>
+</html>

@@ -1,0 +1,148 @@
+/**
+ * @file
+ * Стили блоков проекта, собранные в один файл
+ */
+
+.page {
+    max-width: 980px;
+}
+
+.page__spinner {
+    display: none;
+    text-align: center;
+    margin: 20px;
+}
+
+.page_state_spinner .page__spinner {
+    display: block;
+}
+
+.header {
+    padding: 20px 20px 0;
+}
+
+.header__item {
+    display: block;
+}
+
+.header__item + .header__item {
+    margin-top: 20px;
+}
+
+.header__logo {
+    font-size: 28px;
+}
+
+.header__logo:first-letter {
+    color: red;
+}
+
+.search {
+    display: table;
+}
+
+.search__col {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.search__col_type_input {
+    width: 100%;
+    padding-right: 5px;
+}
+
+.search__col_type_button {
+    width: 0;
+}
+
+.footer {
+    margin-top: 20px;
+    padding: 0 20px 20px;
+    clear: both;
+    color: #666;
+}
+
+.footer::before {
+    display: block;
+    content: '';
+    border-top: 1px solid #e9e9e9;
+    margin-bottom: 10px;
+}
+
+.footer__text {
+    margin: 0 0 5px 0;
+}
+
+.list {
+    padding: 0 0 0 20px;
+}
+
+.list__item + .list__item {
+    margin-top: 5px;
+}
+
+.modal__content_type_alert {
+    padding: 40px;
+}
+
+.results {
+    margin: 20px;
+}
+
+.results_empty {
+    text-align: center;
+}
+
+.results_hidden {
+    display: none;
+}
+
+.results__item {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px 10px 0;
+}
+
+.favorites-controller__button {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: no-repeat center url(star.svg);
+    background-size: 30px;
+    opacity: 0.3;
+
+    transition: opacity 0.1s;
+}
+
+.favorites-controller__button_active {
+    opacity: 1;
+}
+
+.favorites-container__content {
+    box-sizing: border-box;
+    width: 80%;
+    min-height: 80%;
+    padding: 20px;
+}
+
+.favorites-container__header {
+    font-size: 26px;
+}
+
+.favorites-container__header:first-letter {
+    color: red;
+}
+
+.favorites-container__items {
+    margin-top: 20px;
+}
+
+.favorites-list__item {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px 10px 0;
+}
