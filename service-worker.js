@@ -65,7 +65,7 @@ self.addEventListener('fetch', event => {
     if (needStoreForOffline(cacheKey)) {
         console.log(event)
         response = caches.match(cacheKey)
-            .then(cacheResponse => fetchAndPutToCache(cacheKey, event.request) || cacheResponse );
+            .then(cacheResponse => fetchAndPutToCache(cacheKey, event.request) || cacheResponse )
     } else {
         response = fetchWithFallbackToCache(event.request);
     }
@@ -187,6 +187,9 @@ function fetchWithFallbackToCache(request) {
     return fetch(request)
         .catch(() => {
             console.log('[ServiceWorker] Fallback to offline cache:', request.url);
+            // if (request.url.includes('gifs.html')) {
+            //     return caches.match(request.url,{ignoreSearch:false});
+            // }
             return caches.match(request.url);
         });
 }
